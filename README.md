@@ -1,82 +1,37 @@
-# West Close Reimagined
+# West Close Cottage — redesign concept
 
-A redesign concept for [West Close Farmhouse Cottages](https://westclosefarmhouse.co.uk), a
-two-cottage self-catering let in Melmerby, Coverdale, in the Yorkshire Dales.
+An upgraded version of the West Close Cottage page for
+[West Close Farmhouse Cottages](https://westclosefarmhouse.co.uk), Melmerby, Coverdale.
 
-This is an **unsolicited design concept**, prepared to demonstrate what the site could do
-beyond its current brochure form. It is not a live booking system and is not affiliated with
-or endorsed by the business.
+It's the existing page — their photographs, their wording, their published tariff — rebuilt so
+that a guest can check availability, see a price, and send an enquiry without leaving it.
 
-**[View the page →](https://faizan43.github.io/WestCloseFarmhouse/)** *(once Pages is enabled)*
+This is an unsolicited design concept. It is not the live site and not a working booking system.
 
----
-
-## What this demonstrates
-
-The current site is a well-photographed, properly responsive WordPress build. It is not
-broken — the gap is that nothing on it can *close a booking*. Every enquiry lands on a phone
-call or a contact form.
-
-This concept adds the missing layer:
+## What's new on the page
 
 | | |
 |---|---|
-| **Instant quoting** | Live pricing from the real published tariff, driven by season |
-| **Business rules in software** | Saturday-to-Saturday snapping; short breaks restricted to Low Season and Winter |
-| **Filterable amenities** | Dog-friendly, walking, cosy, practical — faceted rather than a wall of prose |
-| **Inline gallery** | Photography beside the price and the booking action, not on a separate page |
+| **Availability & price inline** | Pick dates, see the season and the total — no separate prices page |
+| **Letting rules built in** | Weeks snap to Saturday; short breaks only offered in Low Season and Winter, with the next window shown |
+| **Enquiry pre-filled** | "Request these dates" carries the quote into the enquiry form |
+| **Filterable facilities** | Dogs, family, cosy, outdoors, practical |
+| **Gallery in context** | Ten photographs beside the price and the booking action |
+| **Phone kept prominent** | Top bar, booking card and footer — it's still a phone-first business |
 
-Everything is one self-contained `index.html` — no build step, no dependencies, no backend.
-The only external request is Google Fonts.
+## Tariff and rules
 
-## The quoting engine
+Weekly prices are the published tariff: High £600, Mid £530, Low £430, Winter £365.
+Season date bands are inferred from the published availability calendar. Short-break nightly
+pricing is a guide (weekly ÷ 7 plus 15%) and is labelled as such on the page.
+Dogs are a declaration, not a charge, per the published dog policy.
 
-Rates are the cottage's own published weekly tariff:
+## Build
 
-| Season | Per week |
-|---|---|
-| High | £600 |
-| Mid | £530 |
-| Low | £430 |
-| Winter | £365 |
+One self-contained `index.html`. No dependencies, no build step. Photographs are embedded so the
+page works offline. Google Fonts is the only external request.
 
-Bookings are Saturday to Saturday, so an arrival date that isn't a Saturday is rolled forward
-to the next one, and the page says so. Short breaks are offered only in Low Season and Winter
-— picking a High or Mid Season date in short-break mode surfaces the rule and blocks the
-quote rather than inventing a price.
+WCAG AA contrast verified across light and dark themes. Keyboard operable with visible focus.
+`prefers-reduced-motion` respected.
 
-Two things are **illustrative, not authoritative**, and are labelled as such on the page:
-
-- the season date bands, inferred from the published availability calendar
-- short-break nightly pricing (weekly ÷ 7, with a 15% short-stay uplift)
-
-Dogs are modelled as a declaration rather than a charge, matching the published dog policy
-("the intention to bring dogs must be disclosed at the time of booking").
-
-## Verified against the live site
-
-Claims made in the page's audit section were checked against westclosefarmhouse.co.uk rather
-than assumed:
-
-- **No online booking** — confirmed; the calendar is a display-only plugin, enquiries go
-  through Contact Form 7
-- **Weekly Sat–Sat letting, short breaks by phone** — confirmed from the published tariff page
-- **WordPress 6.2 branch, Contact Form 7 5.7.6** — confirmed from loaded assets
-
-Three things that are *good* about the current site are credited explicitly on the page: the
-theme is genuinely responsive, the gallery already has 46 photos with a working lightbox, and
-the availability calendar is accurate and current.
-
-## Accessibility
-
-- WCAG AA contrast verified on 21 elements across both light and dark themes — no failures
-- Full keyboard operation with visible focus states
-- `aria-pressed` on the stay-type and filter toggles
-- `prefers-reduced-motion` respected
-
-## Credits
-
-All photography © West Close Farmhouse and is used here for illustration within this concept
-only.
-
-Typefaces: Fraunces (display), Work Sans (body), IBM Plex Mono (figures and dates).
+All photography © West Close Farmhouse, used for illustration within this concept only.
